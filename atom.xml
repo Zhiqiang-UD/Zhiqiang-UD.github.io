@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-14T03:49:54.288Z</updated>
+  <updated>2018-07-15T22:00:31.976Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scrapy Tutorial 1: overview</title>
+    <link href="http://yoursite.com/2018/07/15/Scrapy1/"/>
+    <id>http://yoursite.com/2018/07/15/Scrapy1/</id>
+    <published>2018-07-15T21:02:27.662Z</published>
+    <updated>2018-07-15T22:00:31.976Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="About-Scrapy"><a href="#About-Scrapy" class="headerlink" title="About Scrapy"></a>About Scrapy</h2><blockquote><p><strong>Scrapy</strong>  is a free and  open source <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank" rel="noopener">web crawling</a>   framework , written in Python. Originally designed for web scraping, it can also be used to extract data using API.  or as a general purpose web crawler. It is currently maintained by  <a href="https://en.wikipedia.org/w/index.php?title=Scrapinghub&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">Scrapinghub Ltd.</a> , a web scraping development and services company.  </p></blockquote><h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><h3 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h3><p>The following diagram shows an overview of the Scrapy architecture with its components and and outline of data flow (red arrows).<br><img src="https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png" alt="architecture"><br>The data flow is controlled by the execution engine and goes like this (as indicated by the red arrow):</p><ol><li>The <strong>Engine</strong> gets the initial <em>Requests</em> to crawl from the <strong>Spiders</strong>.</li><li>The <strong>Engine</strong> schedules the <em>Requests</em> in the <strong>Scheduler</strong> and ask for the next <em>Requests</em> to crawl.</li><li>The <strong>Scheduler</strong> sends back the next <em>Requests</em> to the <strong>Engine</strong>.</li><li>The <strong>Engine</strong> send the <em>Requests</em> to the <strong>Downloader</strong> through the <strong>Downloader Middlewares</strong> (see process_request()).</li><li>Once the <strong>Downloader</strong> finishes the downloading it generates a <em>Response</em> and sends it back to <strong>Engine</strong> through the <strong>Downloader Middlewares</strong> (see process_response()).</li><li>The <strong>Engine</strong> sends the received <em>Response</em> to the <strong>Spiders</strong> for processing through the <strong>Spider Middleware</strong> (see process_spider_input()).</li><li>The <strong>Spiders</strong> processes the <em>Response</em> and returns the scraped <em>Items</em> and new <em>Requests</em> (to follow) to the <strong>Engine</strong> through the <strong>Spider Middleware</strong> (see process_spider_output()).</li><li>The <strong>Engine</strong> sends the scraped <em>Items</em> to <strong>Item Pipelines</strong>, then send the processed <em>Requests</em> to the <strong>Scheduler</strong> and ask for the next possible <em>Requests</em> to crawl.</li><li>The process repeats (from step 1) until there are no more requests from the <strong>Spiders</strong>.<h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><h4 id="Scrapy-Engine"><a href="#Scrapy-Engine" class="headerlink" title="Scrapy Engine"></a>Scrapy Engine</h4><blockquote><p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.</p></blockquote></li></ol><h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><blockquote><p>The Scheduler receives the request from the engine and enqueues them for feeding them back to engine later when requested.</p></blockquote><h4 id="Downloader"><a href="#Downloader" class="headerlink" title="Downloader"></a>Downloader</h4><blockquote><p>The Downloader is responsible for fetching web pages from the Internet and feeding them back to the engine.</p></blockquote><h4 id="Spiders"><a href="#Spiders" class="headerlink" title="Spiders"></a>Spiders</h4><blockquote><p>Spiders are custom classes written by the user to parse responses and extract scraped items from them or additional requests to follow. Each spider is used for one (or a series of) specific webpage.</p></blockquote><h4 id="Item-Pipelines"><a href="#Item-Pipelines" class="headerlink" title="Item Pipelines"></a>Item Pipelines</h4><blockquote><p>The Item Pipelines is responsible for processing the extracted items from the spiders. Typical tasks include cleansing, validation and persistence (like stoing the item in a database)</p></blockquote><h4 id="Downloader-Middleware"><a href="#Downloader-Middleware" class="headerlink" title="Downloader Middleware"></a>Downloader Middleware</h4><blockquote><p>Downloader Middleware is a specific hook between the Engine the the Downloader and processes requests when pass from the Engine to the Downloader and responses that pass from Downloader to the Engine. It provides a simple mechanism to extend Scrapy by inserting user defined code, like automatic replace user-agent, IP, etc.</p></blockquote><h4 id="Spider-Middleware"><a href="#Spider-Middleware" class="headerlink" title="Spider Middleware"></a>Spider Middleware</h4><blockquote><p>Spider Middleware is a specific hook between the Engine and the Spider and processes spider input (response) and output (items and request). It also provides a simple mechanism to extend Scrapy functions by using user-defined code. </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;About-Scrapy&quot;&gt;&lt;a href=&quot;#About-Scrapy&quot; class=&quot;headerlink&quot; title=&quot;About Scrapy&quot;&gt;&lt;/a&gt;About Scrapy&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Scrapy&lt;/s
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
