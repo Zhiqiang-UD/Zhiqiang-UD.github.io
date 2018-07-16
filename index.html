@@ -119,11 +119,11 @@
 <li>The <strong>Engine</strong> sends the received <em>Response</em> to the <strong>Spiders</strong> for processing through the <strong>Spider Middleware</strong> (see process_spider_input()).</li>
 <li>The <strong>Spiders</strong> processes the <em>Response</em> and returns the scraped <em>Items</em> and new <em>Requests</em> (to follow) to the <strong>Engine</strong> through the <strong>Spider Middleware</strong> (see process_spider_output()).</li>
 <li>The <strong>Engine</strong> sends the scraped <em>Items</em> to <strong>Item Pipelines</strong>, then send the processed <em>Requests</em> to the <strong>Scheduler</strong> and ask for the next possible <em>Requests</em> to crawl.</li>
-<li>The process repeats (from step 1) until there are no more requests from the <strong>Spiders</strong>.<h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><h4 id="Scrapy-Engine"><a href="#Scrapy-Engine" class="headerlink" title="Scrapy Engine"></a>Scrapy Engine</h4><blockquote>
-<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.</p>
-</blockquote>
-</li>
+<li>The process repeats (from step 1) until there are no more requests from the <strong>Spiders</strong>.</li>
 </ol>
+<h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><h4 id="Scrapy-Engine"><a href="#Scrapy-Engine" class="headerlink" title="Scrapy Engine"></a>Scrapy Engine</h4><blockquote>
+<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.<br>vi</p>
+</blockquote>
 <h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><blockquote>
 <p>The Scheduler receives the request from the engine and enqueues them for feeding them back to engine later when requested.</p>
 </blockquote>
@@ -140,14 +140,49 @@
 <p>Downloader Middleware is a specific hook between the Engine the the Downloader and processes requests when pass from the Engine to the Downloader and responses that pass from Downloader to the Engine. It provides a simple mechanism to extend Scrapy by inserting user defined code, like automatic replace user-agent, IP, etc.</p>
 </blockquote>
 <h4 id="Spider-Middleware"><a href="#Spider-Middleware" class="headerlink" title="Spider Middleware"></a>Spider Middleware</h4><blockquote>
-<p>Spider Middleware is a specific hook between the Engine and the Spider and processes spider input (response) and output (items and request). It also provides a simple mechanism to extend Scrapy functions by using user-defined code. </p>
+<p>Spider Middleware is a specific hook between the Engine and the Spider and processes spider input (response) and output (items and request). It also provides a simple mechanism to extend Scrapy functions by using user-defined code.</p>
 </blockquote>
+<h2 id="Process-to-Create-a-Scrapy-Project"><a href="#Process-to-Create-a-Scrapy-Project" class="headerlink" title="Process to Create a Scrapy Project"></a>Process to Create a Scrapy Project</h2><h3 id="Create-Project"><a href="#Create-Project" class="headerlink" title="Create Project"></a>Create Project</h3><p>First you need to create a Scrapy project. I’ll use the England Premier League website as an example. Run the following command:</p>
+<pre><code class="Python">scrapy startproject EPLspider
+</code></pre>
+<p>The EPLspider directory with the following content will be created:</p>
+<pre><code>EPLspider/
+├── EPLspider
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── items.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+│   ├── settings.py
+│   └── spiders
+│       ├── __init__.py
+│       └── __pycache__
+└── scrapy.cfg
+</code></pre><p>The content of each file:</p>
+<ul>
+<li>EPLspider/: Python module of the project, in which code will be added.</li>
+<li>EPLspider/items.py: item file of the project.</li>
+<li>EPLspider/middlewares.py: middlewares file of the project.</li>
+<li>EPLspider/pipelines: pipelines file of the project.</li>
+<li>EPLspider/settings: settings file of the project.</li>
+<li>EPLspider/spiders/: directory with spider code.</li>
+<li>scrapy.cfg: configuration file of the Project.</li>
+</ul>
+<h3 id="Start-with-the-First-Spider"><a href="#Start-with-the-First-Spider" class="headerlink" title="Start with the First Spider"></a>Start with the First Spider</h3><blockquote>
+<p>Spiders are classes that you define and that Scrapy uses to scrape information from a website (or a group of websites). They must subclass <em>scrapy.Spider</em> and define the initial request to make, optionally how to deal with links in the pages, and how to parse the downloaded page content to extract data.</p>
+</blockquote>
+<p>This is our first Spider, <code>EPL_spider.py</code>, saved in the directory <code>EPLspider/spiders/</code>.</p>
+<pre><code>from scrapy.spiders import Spider
 
+class EPLspider(Spider):
+    name = &#39;zhiqiang&#39;
+    start_urls =
+</code></pre>
                 
             </div>
             <div class="continue">
             <a href="/2018/07/15/Scrapy1/">
-            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
@@ -188,7 +223,7 @@
             </div>
             <div class="continue">
             <a href="/2018/07/13/hello-world_new/">
-            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
