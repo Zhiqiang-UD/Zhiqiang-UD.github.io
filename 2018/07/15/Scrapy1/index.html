@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -103,7 +103,7 @@
                     
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#About-Scrapy"><span class="toc-list-text">About Scrapy</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Architecture-Overview"><span class="toc-list-text">Architecture Overview</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Data-Flow"><span class="toc-list-text">Data Flow</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Components"><span class="toc-list-text">Components</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Scrapy-Engine"><span class="toc-list-text">Scrapy Engine</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Scheduler"><span class="toc-list-text">Scheduler</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Downloader"><span class="toc-list-text">Downloader</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Spiders"><span class="toc-list-text">Spiders</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Item-Pipelines"><span class="toc-list-text">Item Pipelines</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Downloader-Middleware"><span class="toc-list-text">Downloader Middleware</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Spider-Middleware"><span class="toc-list-text">Spider Middleware</span></a></li></ol></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Process-to-Create-a-Scrapy-Project"><span class="toc-list-text">Process to Create a Scrapy Project</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Create-Project"><span class="toc-list-text">Create Project</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Start-with-the-First-Spider"><span class="toc-list-text">Start with the First Spider</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#About-Scrapy"><span class="toc-list-text">About Scrapy</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Architecture-Overview"><span class="toc-list-text">Architecture Overview</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Data-Flow"><span class="toc-list-text">Data Flow</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Components"><span class="toc-list-text">Components</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Scrapy-Engine"><span class="toc-list-text">Scrapy Engine</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Scheduler"><span class="toc-list-text">Scheduler</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Downloader"><span class="toc-list-text">Downloader</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Spiders"><span class="toc-list-text">Spiders</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Item-Pipelines"><span class="toc-list-text">Item Pipelines</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Downloader-Middleware"><span class="toc-list-text">Downloader Middleware</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Spider-Middleware"><span class="toc-list-text">Spider Middleware</span></a></li></ol></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Process-to-Create-a-Scrapy-Project"><span class="toc-list-text">Process to Create a Scrapy Project</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Create-Project"><span class="toc-list-text">Create Project</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Start-with-the-First-Spider"><span class="toc-list-text">Start with the First Spider</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Run-the-Spider"><span class="toc-list-text">Run the Spider</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Summary"><span class="toc-list-text">Summary</span></a></li></ol>
 </div>
             <div class="content">
                 <h2 id="About-Scrapy"><a href="#About-Scrapy" class="headerlink" title="About Scrapy"></a>About Scrapy</h2><blockquote>
@@ -122,7 +122,7 @@
 <li>The process repeats (from step 1) until there are no more requests from the <strong>Spiders</strong>.</li>
 </ol>
 <h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><h4 id="Scrapy-Engine"><a href="#Scrapy-Engine" class="headerlink" title="Scrapy Engine"></a>Scrapy Engine</h4><blockquote>
-<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.<br>vi</p>
+<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.</p>
 </blockquote>
 <h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><blockquote>
 <p>The Scheduler receives the request from the engine and enqueues them for feeding them back to engine later when requested.</p>
@@ -175,24 +175,35 @@
 <pre><code>from scrapy.spiders import Spider
 
 class EPLspider(Spider):
-    name = &#39;zhiqiang&#39;
-    start_urls =
-</code></pre>
+    name = &#39;premierLeague&#39;
+    start_urls = [&#39;https://www.premierleague.com/clubs&#39;]
+
+    def parse(self, response):
+        club_url_list = response.css(&#39;ul[class=&quot;block-list-5 block-list-3-m block-list-2-s block-list-2-xs block-list-padding dataContainer&quot;] ::attr(href)&#39;).extract()
+        club_name = response.css(&#39;h4[class=&quot;clubName&quot;]::text&#39;).extract()
+        club_stadium = response.css(&#39;div[class=&quot;stadiumName&quot;]::text&#39;).extract()
+        for i,j in zip(club_name, club_stadium):
+            print(i, j)
+</code></pre><h3 id="Run-the-Spider"><a href="#Run-the-Spider" class="headerlink" title="Run the Spider"></a>Run the Spider</h3><p>Run the following command in the project folder:</p>
+<pre><code>scrapy crawl premierLeague
+</code></pre><p>The club name and stadium of all clubs from the England Premier League will be printed out.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>In this tutorial we show the overall architecture of Scrapy and show its basics with a demo. In the next tutorial, we’ll extend this simple spider program to get more detailed information about the England Premier League, i.e. clubs, players, managers, and match information, <em>etc</em>.</p>
+
             </div>
           
            
             <div class="copyright">
                 <div class="name">
-                    <a>本文作者:</a>
+                    <a>Author:</a>
                     <a>Zhiqiang Zhang</a>
                 </div>
                 <div class="link">
-                    <a>本文链接:</a>
+                    <a>Link:</a>
                     <a class="permalink" href="http://yoursite.com/2018/07/15/Scrapy1/">http://yoursite.com/2018/07/15/Scrapy1/</a>
                 </div>
                 <div class="license">
-                    <a>版权声明:</a>
-                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                    <a>Statement:</a>
+                    <a>All articles in this blog shall be licensed by CC BY-NC-SA 3.0 CN, unless otherwise stated. Please indicate the provenance!</a>
                 </div>
             </div>
             
@@ -205,7 +216,7 @@ class EPLspider(Spider):
 
 <div class="tip">
 <button class="tip-btn">
-    打赏
+    Tip
 </button>
 <div class="tip-img">
 <ul>
@@ -246,8 +257,8 @@ window._bd_share_config={
 <script>
     var gitment = new Gitment({
     id: "Sun Jul 15 2018 17:02:27 GMT-0400",
-    owner: "Vevlins",
-    repo: "Vevlins.github.io",
+    owner: "Zhiqiang",
+    repo: "Zhiqiang-UD.github.io",
     oauth: {
       client_id:"8d83609a651e972e308d",
       client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
@@ -269,7 +280,7 @@ window._bd_share_config={
 </footer>
 
     <script src="/js/jquery.js"></script>
-    <script src="/js/toki.js"></script>  
+    <script src="/js/toki.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

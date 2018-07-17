@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -122,7 +122,7 @@
 <li>The process repeats (from step 1) until there are no more requests from the <strong>Spiders</strong>.</li>
 </ol>
 <h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><h4 id="Scrapy-Engine"><a href="#Scrapy-Engine" class="headerlink" title="Scrapy Engine"></a>Scrapy Engine</h4><blockquote>
-<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.<br>vi</p>
+<p>The engine controls the data flow between all components and triggers events when certain action occurs. See <a href="#Data-Flow">Data Flow</a> for more details.</p>
 </blockquote>
 <h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><blockquote>
 <p>The Scheduler receives the request from the engine and enqueues them for feeding them back to engine later when requested.</p>
@@ -175,14 +175,25 @@
 <pre><code>from scrapy.spiders import Spider
 
 class EPLspider(Spider):
-    name = &#39;zhiqiang&#39;
-    start_urls =
-</code></pre>
+    name = &#39;premierLeague&#39;
+    start_urls = [&#39;https://www.premierleague.com/clubs&#39;]
+
+    def parse(self, response):
+        club_url_list = response.css(&#39;ul[class=&quot;block-list-5 block-list-3-m block-list-2-s block-list-2-xs block-list-padding dataContainer&quot;] ::attr(href)&#39;).extract()
+        club_name = response.css(&#39;h4[class=&quot;clubName&quot;]::text&#39;).extract()
+        club_stadium = response.css(&#39;div[class=&quot;stadiumName&quot;]::text&#39;).extract()
+        for i,j in zip(club_name, club_stadium):
+            print(i, j)
+</code></pre><h3 id="Run-the-Spider"><a href="#Run-the-Spider" class="headerlink" title="Run the Spider"></a>Run the Spider</h3><p>Run the following command in the project folder:</p>
+<pre><code>scrapy crawl premierLeague
+</code></pre><p>The club name and stadium of all clubs from the England Premier League will be printed out.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>In this tutorial we show the overall architecture of Scrapy and show its basics with a demo. In the next tutorial, we’ll extend this simple spider program to get more detailed information about the England Premier League, i.e. clubs, players, managers, and match information, <em>etc</em>.</p>
+
                 
             </div>
             <div class="continue">
             <a href="/2018/07/15/Scrapy1/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
@@ -223,7 +234,7 @@ class EPLspider(Spider):
             </div>
             <div class="continue">
             <a href="/2018/07/13/hello-world_new/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
@@ -244,7 +255,7 @@ class EPLspider(Spider):
 </footer>
 
     <script src="/js/jquery.js"></script>
-    <script src="/js/toki.js"></script>  
+    <script src="/js/toki.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

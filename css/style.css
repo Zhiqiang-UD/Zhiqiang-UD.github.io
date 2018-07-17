@@ -195,7 +195,7 @@ main,
   color: #fff;
 }
 .post .content * {
-  word-break: break-all !important;
+  word-break: normal !important;
   word-wrap: none !important;
 }
 .post .content pre *::selection {
@@ -216,9 +216,9 @@ main,
   display: block;
 }
 .post .content p {
-  text-indent: 2em;
-  word-break: break-all;
-  word-wrap: break-word;
+  text-indent: 0em;
+  word-break: normal;
+  word-wrap: normal;
 }
 .post .content svg {
   max-width: 100%;
@@ -241,7 +241,7 @@ main,
   border-bottom: 1px solid #516272;
 }
 .post .content p {
-  text-indent: 2em;
+  text-indent: 0em;
 }
 .post .content blockquote {
   border-left: 0.4em solid #516272;
@@ -293,8 +293,8 @@ main,
 }
 .post .content pre {
   display: block;
-  word-wrap: break-word;
-  word-break: break-all;
+  word-wrap: normal;
+  word-break: normal;
   padding: 0.6em;
   margin: 0 2px;
   color: #e96900;
@@ -307,8 +307,8 @@ main,
 }
 .post .content pre code {
   display: block;
-  word-wrap: break-word;
-  word-break: break-all;
+  word-wrap: normal;
+  word-break: normal;
   border: none !important;
   font-size: 0.8em;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace !important;
