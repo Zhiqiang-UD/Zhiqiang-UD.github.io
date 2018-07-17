@@ -51,7 +51,7 @@ main,
 .search-items {
   flex: 1;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1800px) {
   body {
     padding: 0 10%;
   }
@@ -177,6 +177,7 @@ main,
 }
 .post .content {
   display: block;
+  counter-reset: h2;
   color: #444;
   font-size: 0.8em;
   margin: 2em 0;
@@ -240,6 +241,46 @@ main,
   color: #2b3f52;
   border-bottom: 1px solid #516272;
 }
+.post .content h2 {
+  counter-reset: h3;
+}
+.post .content h3 {
+  counter-reset: h4;
+}
+.post .content h4 {
+  counter-reset: h5;
+}
+.post .content h5 {
+  counter-reset: h6;
+}
+.post .content h2:before {
+  counter-increment: h2;
+  content: counter(h2) ". ";
+}
+.post .content h3:before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3) ". ";
+}
+.post .content h4:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+.post .content h5:before {
+  counter-increment: h5;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
+}
+.post .content h6:before {
+  counter-increment: h6;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". ";
+}
+.post .content h2.nocount:before,
+.post .content h3.nocount:before,
+.post .content h4.nocount:before,
+.post .content h5.nocount:before,
+.post .content h6.nocount:before {
+  content: "";
+  counter-increment: none;
+}
 .post .content p {
   text-indent: 0em;
 }
@@ -253,19 +294,19 @@ main,
   text-decoration: none;
 }
 .post .content h1 .headerlink::before {
-  content: '#';
+  content: '';
 }
 .post .content h2 .headerlink {
   text-decoration: none;
 }
 .post .content h2 .headerlink::before {
-  content: '##';
+  content: '';
 }
 .post .content h3 .headerlink {
   text-decoration: none;
 }
 .post .content h3 .headerlink::before {
-  content: '###';
+  content: '';
 }
 .post .content *:not(pre) code {
   padding: 0.2em 0.4em;
