@@ -51,7 +51,7 @@ main,
 .search-items {
   flex: 1;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1900px) {
   body {
     padding: 0 10%;
   }
