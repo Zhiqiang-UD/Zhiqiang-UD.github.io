@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="/css/gitment.css">
     <link rel="stylesheet" href="/css/hljs.min.css">
     <script src="/js/hljs.min.js"></script>  
-    <script src="/js/gitment.browser.js"></script>  
+    <script src="/js/gitment.browser.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->  
 </head>
 <body>
-    <header class="header" id="header">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header" id="header">
     <h1>
         <a class="title" href="/">
             Zhiqiang
@@ -109,7 +109,7 @@
                 <h2 id="About-Scrapy"><a href="#About-Scrapy" class="headerlink" title="About Scrapy"></a>About Scrapy</h2><blockquote>
 <p><strong>Scrapy</strong>  is a free and  open source <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank" rel="noopener">web crawling</a>   framework , written in Python. Originally designed for web scraping, it can also be used to extract data using API.  or as a general purpose web crawler. It is currently maintained by  <a href="https://en.wikipedia.org/w/index.php?title=Scrapinghub&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">Scrapinghub Ltd.</a> , a web scraping development and services company.  </p>
 </blockquote>
-<h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><h3 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h3><p>The following diagram shows an overview of the Scrapy architecture with its components and and outline of data flow (red arrows).<br><img src="https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png" alt="architecture"><br>The data flow is controlled by the execution engine and goes like this (as indicated by the red arrow):</p>
+<h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><h3 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h3><p>The following diagram shows an overview of the Scrapy architecture with its components and and outline of data flow (red arrows).<br><img src="https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png" alt="architecture"><span class="image_caption">architecture</span><br>The data flow is controlled by the execution engine and goes like this (as indicated by the red arrow):</p>
 <ol>
 <li>The <strong>Engine</strong> gets the initial <em>Requests</em> to crawl from the <strong>Spiders</strong>.</li>
 <li>The <strong>Engine</strong> schedules the <em>Requests</em> in the <strong>Scheduler</strong> and ask for the next <em>Requests</em> to crawl.</li>
@@ -286,5 +286,21 @@ window._bd_share_config={
     <script src="/js/jquery.js"></script>
     <script src="/js/toki.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 </body>
 </html>
