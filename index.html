@@ -107,7 +107,8 @@
             <div class="content">
                 
                 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>A central problem in graph theory is the shortest path problem which is to find the shortest path between two nodes (vertices) in a graph so that the sum of the weight of its constituent edges is minimum. There are four variations of the shortest path problem namely, single-source shortest path (SSSP), breadth-first search (BFS), all-pairs shortest path (APSP), and single-source widest path (SSWP). Many algorithms are in use today which solve this problem. Some of the most popular algorithms are Dijkstra’s algorithm, Bellman-Ford algorithm, A* search algorithm, and Floyd-Warshall algorithm. These algorithms can be applied to undirected as well as directed graphs. Interesting research has been done on this problem due to its many useful real-world applications like road networks, community detection, currency exchange, logistics, electronic design, etc. In this project, we focused on the parallelizing of three algorithms - Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm and analyze the speedups against sequential implementations.</p>
-<h2 id="Literature-Review"><a href="#Literature-Review" class="headerlink" title="Literature Review"></a>Literature Review</h2><p>Parallelizing the classical shortest path algorithms can be done in several ways. Some of the ways have been discussed by B. Popa <em>et al.</em> [1] Another approach to parallelize Dijkstra’s algorithm has been discussed by A. Crauser <em>et al.</em> [2]<br>To discuss parallelizing the classical algorithms, we discuss the main idea of the three algorithms we used in our experiment, namely: Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm in the following.<br>Dijkstra’s algorithm finds the shortest path from a single source and at each step, it finds the minimal distant node, tries to find the shortest paths to other nodes using the recently found shortest node. This algorithm does not consider negative weights and thus cannot be used in a graph with negative weights.<br>Bellman-Ford algorithm also finds the shortest path from a single source. However, at each step in contrary to Dijkstra’s algorithm, this algorithm updates each node’s distance from the source by the observing the edges. Bellman-Ford algorithm can detect negative weight cycles in a graph and also can be used in a graph with negative weights.<br>Floyd-Warshall algorithm finds all pair shortest path and does that by observing each node at a time and update paired shortest distances if the node can contribute. This algorithm also can be used in a graph with negative weights.<br>The pseudocodes of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm are given in Figure 1 below.<br><img src="/img/Fig2.1.png" alt="Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm"><span class="image_caption">Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm</span><br>The running time and space complexity of the algorithms are given in Table 1 below:</p>
+<h2 id="Literature-Review"><a href="#Literature-Review" class="headerlink" title="Literature Review"></a>Literature Review</h2><p>Parallelizing the classical shortest path algorithms can be done in several ways. Some of the ways have been discussed by B. Popa <em>et al.</em> [1] Another approach to parallelize Dijkstra’s algorithm has been discussed by A. Crauser <em>et al.</em> [2]<br>To discuss parallelizing the classical algorithms, we discuss the main idea of the three algorithms we used in our experiment, namely: Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm in the following.<br>Dijkstra’s algorithm finds the shortest path from a single source and at each step, it finds the minimal distant node, tries to find the shortest paths to other nodes using the recently found shortest node. This algorithm does not consider negative weights and thus cannot be used in a graph with negative weights.<br>Bellman-Ford algorithm also finds the shortest path from a single source. However, at each step in contrary to Dijkstra’s algorithm, this algorithm updates each node’s distance from the source by the observing the edges. Bellman-Ford algorithm can detect negative weight cycles in a graph and also can be used in a graph with negative weights.<br>Floyd-Warshall algorithm finds all pair shortest path and does that by observing each node at a time and update paired shortest distances if the node can contribute. This algorithm also can be used in a graph with negative weights.<br>The pseudocodes of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm are given in Figure 1 below.<br><img src="/img/Fig2.1.png" alt="Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm"><span class="image_caption">Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm</span></p>
+<p>The running time and space complexity of the algorithms are given in Table 1 below:</p>
 <div class="table-container">
 <table>
 <thead>
@@ -141,7 +142,7 @@
             </div>
             <div class="continue">
             <a href="/2018/12/12/CISC_662_Project_Report/">
-            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
@@ -251,7 +252,7 @@ class EPLspider(Spider):
             </div>
             <div class="continue">
             <a href="/2018/07/15/Scrapy1/">
-            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
@@ -292,7 +293,7 @@ class EPLspider(Spider):
             </div>
             <div class="continue">
             <a href="/2018/07/13/hello-world_new/">
-            Continue            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
         </article>
