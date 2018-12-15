@@ -103,11 +103,11 @@
                     
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Introduction"><span class="toc-list-text">Introduction</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Literature-Review"><span class="toc-list-text">Literature Review</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Introduction"><span class="toc-list-text">Introduction</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Literature-Review"><span class="toc-list-text">Literature Review</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Method"><span class="toc-list-text">Method</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Experimental-Setup"><span class="toc-list-text">Experimental Setup</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Results"><span class="toc-list-text">Results</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Serieal-Running-Time"><span class="toc-list-text">Serieal Running Time</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Effects-of-Compiler-GCC-vs-ICC"><span class="toc-list-text">Effects of Compiler: GCC vs. ICC</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Parallel-Running-Time-on-Machine-1-OS-X"><span class="toc-list-text">Parallel Running Time on Machine 1: OS X</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Parallel-Running-Time-on-Machine-2-Windows"><span class="toc-list-text">Parallel Running Time on Machine 2: Windows</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Parallel-Running-Time-on-Machine-3-Ubuntu"><span class="toc-list-text">Parallel Running Time on Machine 3: Ubuntu</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Parallel-Running-Time-on-Machine-4-Cent-OS"><span class="toc-list-text">Parallel Running Time on Machine 4: Cent OS</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Discussion"><span class="toc-list-text">Discussion</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Amdahl’s-Law-and-Roofline-Model"><span class="toc-list-text">Amdahl’s Law and Roofline Model</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Applications"><span class="toc-list-text">Applications</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Finding-Arbitrage-Opportunities-in-Currency-Exchange-Problem"><span class="toc-list-text">Finding Arbitrage Opportunities in Currency Exchange Problem.</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Conclusions-and-Outlook"><span class="toc-list-text">Conclusions and Outlook</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#References"><span class="toc-list-text">References</span></a></li></ol>
 </div>
             <div class="content">
                 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>A central problem in graph theory is the shortest path problem which is to find the shortest path between two nodes (vertices) in a graph so that the sum of the weight of its constituent edges is minimum. There are four variations of the shortest path problem namely, single-source shortest path (SSSP), breadth-first search (BFS), all-pairs shortest path (APSP), and single-source widest path (SSWP). Many algorithms are in use today which solve this problem. Some of the most popular algorithms are Dijkstra’s algorithm, Bellman-Ford algorithm, A* search algorithm, and Floyd-Warshall algorithm. These algorithms can be applied to undirected as well as directed graphs. Interesting research has been done on this problem due to its many useful real-world applications like road networks, community detection, currency exchange, logistics, electronic design, etc. In this project, we focused on the parallelizing of three algorithms - Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm and analyze the speedups against sequential implementations.</p>
-<h2 id="Literature-Review"><a href="#Literature-Review" class="headerlink" title="Literature Review"></a>Literature Review</h2><p>Parallelizing the classical shortest path algorithms can be done in several ways. Some of the ways have been discussed by B. Popa <em>et al.</em> [1] Another approach to parallelize Dijkstra’s algorithm has been discussed by A. Crauser <em>et al.</em> [2]<br>To discuss parallelizing the classical algorithms, we discuss the main idea of the three algorithms we used in our experiment, namely: Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm in the following.<br>Dijkstra’s algorithm finds the shortest path from a single source and at each step, it finds the minimal distant node, tries to find the shortest paths to other nodes using the recently found shortest node. This algorithm does not consider negative weights and thus cannot be used in a graph with negative weights.<br>Bellman-Ford algorithm also finds the shortest path from a single source. However, at each step in contrary to Dijkstra’s algorithm, this algorithm updates each node’s distance from the source by the observing the edges. Bellman-Ford algorithm can detect negative weight cycles in a graph and also can be used in a graph with negative weights.<br>Floyd-Warshall algorithm finds all pair shortest path and does that by observing each node at a time and update paired shortest distances if the node can contribute. This algorithm also can be used in a graph with negative weights.<br>The pseudocodes of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm are given in Figure 1 below.<br><img src="/img/Fig2.1.png" alt="Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm"><span class="image_caption">Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm</span></p>
+<h2 id="Literature-Review"><a href="#Literature-Review" class="headerlink" title="Literature Review"></a>Literature Review</h2><p>Parallelizing the classical shortest path algorithms can be done in several ways. Some of the ways have been discussed by B. Popa <em>et al.</em> [1] Another approach to parallelize Dijkstra’s algorithm has been discussed by A. Crauser <em>et al.</em> [2]<br>To discuss parallelizing the classical algorithms, we discuss the main idea of the three algorithms we used in our experiment, namely: Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm in the following.<br>Dijkstra’s algorithm finds the shortest path from a single source and at each step, it finds the minimal distant node, tries to find the shortest paths to other nodes using the recently found shortest node. This algorithm does not consider negative weights and thus cannot be used in a graph with negative weights.<br>Bellman-Ford algorithm also finds the shortest path from a single source. However, at each step in contrary to Dijkstra’s algorithm, this algorithm updates each node’s distance from the source by the observing the edges. Bellman-Ford algorithm can detect negative weight cycles in a graph and also can be used in a graph with negative weights.<br>Floyd-Warshall algorithm finds all pair shortest path and does that by observing each node at a time and update paired shortest distances if the node can contribute. This algorithm also can be used in a graph with negative weights.<br>The pseudocodes of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm are given in Figure 1 below.<br><img src="/img/Pseudocode.png" alt="Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm"><span class="image_caption">Figure 1 Pseudocode of Dijkstra’s algorithm, Bellman-Ford algorithm and Floyd-Warshall algorithm</span></p>
 <p>The running time and space complexity of the algorithms are given in Table 1 below:</p>
 <div class="table-container">
 <table>
@@ -137,6 +137,101 @@
 </tbody>
 </table>
 </div>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p>The three algorithms we chose for our experiment are classic and they have been used in numerous applications. If we observe the time complexity of the algorithms, we see all three are having significant calculation part i.e. arithmetic integrity. According to the roofline model, the more arithmetic intensity an algorithm has, the more performance gain can be achieved using parallelization while increasing the dataset. Therefore, we used parallelization to gain performance. For parallelization we used OpenMP.</p>
+<p>OpenMP is an API for writing multithreaded applications. The API supports C/C++ and Fortran on a wide variety of architectures. OpenMP provides a portable, scalable model for developers of shared memory parallel applications.<br>OpenMP is an abbreviation for Open Multi-Processing. It is comprised of three primary API components:</p>
+<ul>
+<li>Compiler Directives</li>
+<li>Runtime Library Routines</li>
+<li>Environment Variables</li>
+</ul>
+<p>OpenMP uses the fork-join model of parallel execution. All OpenMP programs begin as a single process: the master thread. The master thread executes sequentially until the first parallel region construct is encountered. The master thread then creates a team of parallel threads. The statements in the program that are enclosed by the parallel region construct are then executed in parallel among the various team threads. When the team threads complete the statements in the parallel region construct, they synchronize and terminate, leaving only the master thread. The number of parallel regions and the threads that comprise them are arbitrary.</p>
+<p>Because OpenMP (Fig. 2) is a shared memory programming model, most data within a parallel region is shared by default. OpenMP provides a way for the programmer to explicitly specify how data is “scoped” if the default shared scoping is not desired.<br><img src="/img/Fig2.png" alt="Figure 2 OpenMP thread Model"><span class="image_caption">Figure 2 OpenMP thread Model</span></p>
+<h2 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h2><p>For the experimental setup, we used four machines. Three of the machines were personal laptops. The fourth is the Farber cluster which is the University of Delaware’s second Community Cluster, which is a distributed-memory, Linux cluster. A summary of these machines can be seen in the following table.</p>
+<p>Mention Intel compiler</p>
+<p>Data sets used</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Machine #</th>
+<th style="text-align:center">Operating System</th>
+<th style="text-align:center">Architecture</th>
+<th style="text-align:center"># cores</th>
+<th style="text-align:center"># threads</th>
+<th style="text-align:center">Ram (GB)</th>
+<th style="text-align:center">frequency (GHz)</th>
+<th style="text-align:center">Compiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 (laptop)</td>
+<td style="text-align:center">OS X</td>
+<td style="text-align:center">Intel Core i5 3210M</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">Clang</td>
+</tr>
+<tr>
+<td style="text-align:center">2 (laptop)</td>
+<td style="text-align:center">Windows</td>
+<td style="text-align:center">Intel Core i7 7500U</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2.7</td>
+<td style="text-align:center">OpenMP for Visual Studio 2015</td>
+</tr>
+<tr>
+<td style="text-align:center">3 (laptop)</td>
+<td style="text-align:center">Ubuntu</td>
+<td style="text-align:center">Intel Core i7 8550U</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">1.8</td>
+<td style="text-align:center">GCC</td>
+</tr>
+<tr>
+<td style="text-align:center">4 (farber cluster)</td>
+<td style="text-align:center">Cent OS</td>
+<td style="text-align:center">Intel(R) Xeon(R) E5-2670</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">125</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">GCC/ICC(intel)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Average running Time</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><h3 id="Serieal-Running-Time"><a href="#Serieal-Running-Time" class="headerlink" title="Serieal Running Time"></a>Serieal Running Time</h3><p>The sequential running time is plotted in Fig. 3. This is the running time of the graph with 1000 nodes on machine 3.<br><img src="/img/Scale of Running Time.png" alt="Figure 3 OpenMP thread Model"><span class="image_caption">Figure 3 OpenMP thread Model</span></p>
+<h3 id="Effects-of-Compiler-GCC-vs-ICC"><a href="#Effects-of-Compiler-GCC-vs-ICC" class="headerlink" title="Effects of Compiler: GCC vs. ICC"></a>Effects of Compiler: GCC vs. ICC</h3><h3 id="Parallel-Running-Time-on-Machine-1-OS-X"><a href="#Parallel-Running-Time-on-Machine-1-OS-X" class="headerlink" title="Parallel Running Time on Machine 1: OS X"></a>Parallel Running Time on Machine 1: OS X</h3><p><img src="/img/Mac_threads.png" alt="Figure 4 Parallel Running Time on Machine 1"><span class="image_caption">Figure 4 Parallel Running Time on Machine 1</span></p>
+<h3 id="Parallel-Running-Time-on-Machine-2-Windows"><a href="#Parallel-Running-Time-on-Machine-2-Windows" class="headerlink" title="Parallel Running Time on Machine 2: Windows"></a>Parallel Running Time on Machine 2: Windows</h3><p><img src="/img/Dip_threads.png" alt="Figure 5 Parallel Running Time on Machine 2"><span class="image_caption">Figure 5 Parallel Running Time on Machine 2</span></p>
+<h3 id="Parallel-Running-Time-on-Machine-3-Ubuntu"><a href="#Parallel-Running-Time-on-Machine-3-Ubuntu" class="headerlink" title="Parallel Running Time on Machine 3: Ubuntu"></a>Parallel Running Time on Machine 3: Ubuntu</h3><p><img src="/img/Apoorva_threads.png" alt="Figure 6 Parallel Running Time on Machine 3"><span class="image_caption">Figure 6 Parallel Running Time on Machine 3</span></p>
+<h3 id="Parallel-Running-Time-on-Machine-4-Cent-OS"><a href="#Parallel-Running-Time-on-Machine-4-Cent-OS" class="headerlink" title="Parallel Running Time on Machine 4: Cent OS"></a>Parallel Running Time on Machine 4: Cent OS</h3><p><img src="/img/Farber_threads.png" alt="Figure 7 Parallel Running Time on Machine 4"><span class="image_caption">Figure 7 Parallel Running Time on Machine 4</span></p>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><h3 id="Amdahl’s-Law-and-Roofline-Model"><a href="#Amdahl’s-Law-and-Roofline-Model" class="headerlink" title="Amdahl’s Law and Roofline Model"></a>Amdahl’s Law and Roofline Model</h3><p><img src="/img/Decrease with nodes.png" alt="Figure 8 Speed up with respect to computation nodes"><span class="image_caption">Figure 8 Speed up with respect to computation nodes</span><br><img src="/img/Decrease with algorithm.png" alt="Figure 9 Speed up with respect to different algorithms"><span class="image_caption">Figure 9 Speed up with respect to different algorithms</span></p>
+<h2 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h2><p>There are many applications for shortest path algorithm. To name a few:</p>
+<ol>
+<li>Shortest Path Algorithms are used in google maps to find the short path between the source and destination. We can also say it as it is used to find the direction between two physical locations. Google maps uses A* algorithm to do the same.</li>
+<li>Shortest path algorithm is used in IP routing to find the Open shortest path first.</li>
+<li>It is also used in telephone networks.</li>
+<li>Used to find arbitrage opportunities in currency exchange problem.</li>
+</ol>
+<h3 id="Finding-Arbitrage-Opportunities-in-Currency-Exchange-Problem"><a href="#Finding-Arbitrage-Opportunities-in-Currency-Exchange-Problem" class="headerlink" title="Finding Arbitrage Opportunities in Currency Exchange Problem."></a>Finding Arbitrage Opportunities in Currency Exchange Problem.</h3><p>For this problem we use Bellman Ford Algorithm. Bellman ford is used because the graph can have negative edges and this algorithm can be used to find if the graph has any negative cycles. For this problem we use negative log of the exchange rates to change as the weights of the edges. This done to change the problem from maximization problem to minimization problem. The Table 4. gives details about the exchange rates between the 6 different currencies. If the graph has any negative cycles indicates that this currency exchange has arbitrage opportunities. We can use backtracking to find between which currency exchange pair this arbitrage opportunity exists. Arbitrage opportunity results from a pricing discrepancy among the different currencies in the foreign exchange market.<br><img src="/img/Currency.png" alt=""></p>
+<h2 id="Conclusions-and-Outlook"><a href="#Conclusions-and-Outlook" class="headerlink" title="Conclusions and Outlook"></a>Conclusions and Outlook</h2><p>In conclusion, parallelization definitely reduces the time cost compared to the sequential run time of the three algorithms. Doing this project brought into light that the speedup of thread-level parallelization depends on the machine as well as the operating system. The results produced demonstrates Amdahl’s law and the Roofline model. Not only were the benefits of parallelization exposed but to see the algorithms being applied to a useful application like currency exchange was quite interesting. </p>
+<p>Further investigation can be done on the parallelization of Dijkstra’s algorithm and seek to improve the runtime for more number of threads. It would also be fascinating to apply these effective algorithms for more applications like the GPS system, electronic design, telephone networks, etc. The shortest path problem is certainly worth exploring due to its countless implementations. </p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]. Popa, B., &amp; Popescu, D. (2016, May). Analysis of algorithms for shortest path problem in parallel. In Carpathian Control Conference (ICCC), 2016 17th International (pp. 613-617). IEEE.</p>
+<p>[2]. Crauser, A., Mehlhorn, K., Meyer, U., &amp; Sanders, P. (1998, August). A parallelization of Dijkstra’s shortest path algorithm. In International Symposium on Mathematical Foundations of Computer Science (pp. 722-731). Springer, Berlin, Heidelberg.</p>
+<p>[3]. Bellman-Ford algorithm in Parallel and Serial - GitHub link<br><a href="https://github.com/sunnlo/BellmanFord" target="_blank" rel="noopener">https://github.com/sunnlo/BellmanFord</a></p>
+<p>[4]. Dijkstra’s Shortest Path Algorithm<br><a href="https://people.sc.fsu.edu/~jburkardt/cpp_src/dijkstra/dijkstra.cpp" target="_blank" rel="noopener">https://people.sc.fsu.edu/~jburkardt/cpp_src/dijkstra/dijkstra.cpp</a> </p>
+<p>[5]. Floyd, R. W. (1962). Algorithm 97: shortest path. Communications of the ACM, 5(6), 345.</p>
+<p>[6]. Floyd Warshall Algorithm<br><a href="https://engineering.purdue.edu/~eigenman/ECE563/ProjectPresentations/ParallelAll-PointsShortestPaths.pdf" target="_blank" rel="noopener">https://engineering.purdue.edu/~eigenman/ECE563/ProjectPresentations/ParallelAll-PointsShortestPaths.pdf</a> </p>
+<p>[7]. Bellman-Ford Algorithm Tutorial<br><a href="https://www.programiz.com/dsa/bellman-ford-algorithm" target="_blank" rel="noopener">https://www.programiz.com/dsa/bellman-ford-algorithm</a> </p>
+<p>[8]. Shortest Path Algorithms Tutorial <a href="https://www.hackerearth.com/practice/algorithms/graphs/shortest-path-algorithms/tutorial" target="_blank" rel="noopener">https://www.hackerearth.com/practice/algorithms/graphs/shortest-path-algorithms/tutorial</a></p>
 
             </div>
           
