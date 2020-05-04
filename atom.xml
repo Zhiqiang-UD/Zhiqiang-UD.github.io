@@ -6,15 +6,38 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-15T21:10:36.098Z</updated>
+  <updated>2020-05-04T04:22:51.585Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Zhiqiang Zhang, Appo</name>
+    <name>Zhiqiang Zhang</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Investment Summary (May 4, 2020)</title>
+    <link href="http://yoursite.com/2020/05/04/Investment-Summary-May-4-2020/"/>
+    <id>http://yoursite.com/2020/05/04/Investment-Summary-May-4-2020/</id>
+    <published>2020-05-04T04:06:12.000Z</published>
+    <updated>2020-05-04T04:22:51.585Z</updated>
+    
+    <content type="html"><![CDATA[<p>Total: down by 5.59%<br><img src="/img/Investment/5_4_2020/Total.PNG" alt="Total summary"><span class="image_caption">Total summary</span><br>周四周五开始下跌，可能是因为疫情没有好转迹象，市场悲观。<br><img src="/img/Investment/5_4_2020/Tencent.PNG" alt="Tencent"><span class="image_caption">Tencent</span></p><p><img src="/img/Investment/5_4_2020/Nvidia.PNG" alt="Nvidia"><span class="image_caption">Nvidia</span></p><p><img src="/img/Investment/5_4_2020/Bilibili.PNG" alt="Bilibili"><span class="image_caption">Bilibili</span></p><p><img src="/img/Investment/5_4_2020/Alibaba.PNG" alt="Alibaba"><span class="image_caption">Alibaba</span></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Total: down by 5.59%&lt;br&gt;&lt;img src=&quot;/img/Investment/5_4_2020/Total.PNG&quot; alt=&quot;Total summary&quot;&gt;&lt;span class=&quot;image_caption&quot;&gt;Total summary&lt;/span
+      
+    
+    </summary>
+    
+    
+      <category term="Investment" scheme="http://yoursite.com/tags/Investment/"/>
+    
+  </entry>
   
   <entry>
     <title>Parallelization and Analysis of Shortest Path Algorithms </title>
