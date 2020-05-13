@@ -103,7 +103,7 @@
                     
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Quick-Start"><span class="toc-list-text">Quick Start</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Create-a-new-post"><span class="toc-list-text">Create a new post</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Run-server"><span class="toc-list-text">Run server</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Generate-static-files"><span class="toc-list-text">Generate static files</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Deploy-to-remote-sites"><span class="toc-list-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Quick-Start"><span class="toc-list-text">Quick Start</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Create-a-new-post"><span class="toc-list-text">Create a new post</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Run-server"><span class="toc-list-text">Run server</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Generate-static-files"><span class="toc-list-text">Generate static files</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Deploy-to-remote-sites"><span class="toc-list-text">Deploy to remote sites</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Delete-post"><span class="toc-list-text">Delete post</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Add-local-images"><span class="toc-list-text">Add local images</span></a></li></ol></li></ol>
 </div>
             <div class="content">
                 <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -119,22 +119,34 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
 </code></pre>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="Delete-post"><a href="#Delete-post" class="headerlink" title="Delete post"></a>Delete post</h3><ol>
+<li>Delete the post under source/_post folder</li>
+<li>Run hexo clean to delete the database (db.json) and assets folder</li>
+<li>Run hexo generateto generate the new blog without your deleted post </li>
+<li>Run hexo deploy to deploy your blog</li>
+</ol>
+<h3 id="Add-local-images"><a href="#Add-local-images" class="headerlink" title="Add local images"></a>Add local images</h3><ul>
+<li>Set <code>post_asset_folder: true</code> in <code>_config.yml</code>. </li>
+<li>Add an npm package <code>npm i -s hexo-asset-link</code></li>
+<li>Use syntax <code>![Alt Text](Post-Asset-Folder/image-name.png)</code> for images in <code>./source/_posts/Post-Asset-Folder/image-name.png</code></li>
+</ul>
+<p>More info: <a href="https://hexo.io/docs/asset-folders.html" target="_blank" rel="noopener">Asset Folders</a>, <a href="https://chrismroberts.com/2020/01/06/using-markdown-in-hexo-to-add-images/" target="_blank" rel="noopener">Local Images with Markdown</a></p>
 
             </div>
           
            
             <div class="copyright">
                 <div class="name">
-                    <a>本文作者:</a>
+                    <a>Author:</a>
                     <a>Zhiqiang Zhang</a>
                 </div>
                 <div class="link">
-                    <a>本文链接:</a>
+                    <a>Link:</a>
                     <a class="permalink" href="http://yoursite.com/2018/07/13/hello-world_new/">http://yoursite.com/2018/07/13/hello-world_new/</a>
                 </div>
                 <div class="license">
-                    <a>版权声明:</a>
-                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                    <a>Statement:</a>
+                    <a>All articles in this blog shall be licensed by CC BY-NC-SA 3.0 CN, unless otherwise stated. Please indicate the provenance!</a>
                 </div>
             </div>
             
@@ -147,7 +159,7 @@
 
 <div class="tip">
 <button class="tip-btn">
-    打赏
+    Tip
 </button>
 <div class="tip-img">
 <ul>
